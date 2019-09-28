@@ -41,9 +41,6 @@ def astar(field, start, end):
         openList.remove(currentNode)
         closedList.append(currentNode)
 
-        #openList.pop(cur_ind)
-        #closedList.append(currentNode)
-
         if currentNode == end_node:
             # Backtrace path
             path = []
