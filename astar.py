@@ -38,7 +38,13 @@ def astar(field, start, end):
     while len(openList) > 0:
 
         currentNode = openList[0]
-        openList.remove(currentNode)
+        cur_index = 0
+        for index, item in enumerate(openList):
+            if item.f < currentNode.f:
+                currentNode = item
+                cur_index = index
+
+        openList.pop(cur_index)
         closedList.append(currentNode)
 
         if currentNode == end_node:
@@ -97,10 +103,10 @@ def main():
         [0, 0, 0, 1, 0, 0, 0],
         [0, 0, 0, 1, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 1, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 1, 0, 0, 0],
-        [0, 0, 0, 1, 0, 0, 0]
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0]
     ]
 
     start = (0, 0)
